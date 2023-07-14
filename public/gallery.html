@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Asteroids</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<script src="js/gallery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div class="wrapper clearfix">
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">Sun</a>
+					</li>
+					<li>
+						<a href="blog.html">Events</a>
+					</li>
+					<li class="selected">
+						<a href="gallery.html">Asteroids</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="contents">
+			<div id="gallery" class="wrapper clearfix">
+				<h1>Asteroids near K.A</h1>
+				<h2 class="graphTitle">Asteroids that passed close by in the last month</h2>
+				<div class="graph" >
+					<canvas id="myChart"></canvas>
+				</div>
+				<div class="main">
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<h2 id="nasaTableTitle" >NEO table that will pass near KA in the next 24 hours</h2>
+			<table id="nasaTable" class="nasaTable">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Estimated Diameter (min)</th>
+					<th>Estimated Diameter (max)</th>
+					<th>Close Approach Date</th>
+					<th>Miss Distance (kilometers)</th>
+					<th>Relative Velocity (kilometers per hour)</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="body">
+				<div class="wrapper clearfix">
+					<div id="links">
+						<div>
+							<h4>Social</h4>
+							<ul>
+								<li>
+									<a href="" target="_blank">Google +</a>
+								</li>
+								<li>
+									<a href="" target="_blank">Facebook</a>
+								</li>
+								<li>
+									<a href="" target="_blank">Youtube</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h4>Heading placeholder</h4>
+							<ul>
+								<li>
+									<a href="">Link Title 1</a>
+								</li>
+								<li>
+									<a href="">Link Title 2</a>
+								</li>
+								<li>
+									<a href="">Link Title 3</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="newsletter">
+						<h4>Newsletter</h4>
+						<p>
+							Sign up for Our Newsletter
+						</p>
+						<form action="index.html" method="post">
+							<input type="text" id="search2" value="">
+							<input type="submit" value="Sign Up!">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
