@@ -1,0 +1,30 @@
+{
+  "name": "cloud_computing_course",
+  "version": "1.0.0",
+  "description": "Instructions for working with the app server:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.17.11-patch.1",
+    "axios": "^1.4.0",
+    "chalk": "^5.3.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "moment": "^2.29.4",
+    "mongodb": "^5.7.0",
+    "node-rdkafka": "^2.16.1",
+    "open": "^9.1.0",
+    "redis": "^4.6.7",
+    "socket.io": "^4.7.1",
+    "uuid": "^9.0.0",
+    "ws": "^8.13.0"
+  },
+  "keywords": []
+}
