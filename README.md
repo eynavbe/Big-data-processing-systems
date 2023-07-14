@@ -101,17 +101,17 @@ Document indexed successfully-check
 {
 
   UTC: '2023-06-04 02:21:51 UTC',
-
+  
   EventSource: 'Keck 1 and 2',
-
+  
   RA: '08:05:49.60',
-
+  
   DEC: '+25:14:06.00',
-
+  
   EventType: '2',
-
+  
   Urgent: 1
-
+  
 }
 
 Document indexed successfully
@@ -135,14 +135,19 @@ That should print something like this:
 
 {'UTC': '2023-06-07 16:09:47 UTC', 'EventSource': 'MMT', 'RA': '19:28:42.3', 'DEC': '-23:31:19.0', 'EventType': '1', 'Urgent': 5}
 
-{'UTC': '2023-06-15 08:27:56 UTC', 'EventSource': 'MMT', 'RA': '23:44:40.7', 'DEC': '-72:46:32.0', 'EventType': '2', 'Urgent': 5}
-
-{'UTC': '2023-06-27 05:11:50 UTC', 'EventSource': 'Keck 1 and 2', 'RA': '05:38:53.1', 'DEC': '-22:23:30.0', 'EventType': '2', 'Urgent': 2}
 
 Feel free to modify or enhance the code as per your requirements.
 
 6. Download and install Node.js on your computer.
 
+
+7. Download and install MongoDB Desktop on your computer.
+8. connect to MongoDB 
+
+9. run the project
+```
+node server.js
+```
 
 
 ## Simulation of the project
