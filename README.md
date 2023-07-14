@@ -1,5 +1,4 @@
 # Big-data-processing-systems
-# Big-data-processing-systems
 In this project, a system is designed that is fed by relays that warn of astronomical events, presents them at a daily update level, stores and enables research and search and locating patterns through machine learning. </br>
 Design and implementation of a big data alert and analytics system harnessing NoSQL Databases infrastructures, tools from Ecosystem Hadoop
 and a guided concept of services (local and cloud-based) using a typical architectural template for a hybrid cloud computing environment.
