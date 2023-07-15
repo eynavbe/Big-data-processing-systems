@@ -87,7 +87,14 @@ The Redis exported data works directly in the simulator that makes the Json mess
 
 *important, this step should be done only once to get all the data in the server*
 
-5. Open a new terminal or command prompt and navigate to the project directory.
+
+5. Generates messages and publishes them to the Kafka topic.
+
+```
+python main.py
+```
+   
+6. Open a new terminal or command prompt and navigate to the project directory.
 Run the Kafka consumer by executing the following command:
 ```
 node kafkaConsume.js
@@ -138,13 +145,13 @@ That should print something like this:
 
 Feel free to modify or enhance the code as per your requirements.
 
-6. Download and install Node.js on your computer.
+7. Download and install Node.js on your computer.
 
 
-7. Download and install MongoDB Desktop on your computer.
-8. connect to MongoDB 
+8. Download and install MongoDB Desktop on your computer.
+9. connect to MongoDB 
 
-9. run the project
+10. run the project
 ```
 node server.js
 ```
