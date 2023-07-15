@@ -158,3 +158,10 @@ node server.js
 
 
 ## Simulation of the project
+
+
+https://github.com/eynavbe/Big-data-processing-systems/assets/93534494/7f3cb816-e914-4714-85d0-4ea6b58c0e52
+
+
+
+
