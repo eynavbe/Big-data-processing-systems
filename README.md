@@ -80,7 +80,7 @@ docker-compose down
 ```
 4. Start the program that sends the data from the JSON (BSC.JSON) to Redis container:
 ```
-node send_to_redis.s
+node send_to_redis.js
 ```
 
 The Redis exported data works directly in the simulator that makes the Json messeages.
