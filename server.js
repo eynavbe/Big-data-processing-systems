@@ -88,33 +88,6 @@ app.get('/sun_prediction', async (req, res) => {
 
 
 
-app.get('/data', async (req, res) => {
-  const { Client } = require('@elastic/elasticsearch');
-  const client = new Client({ node: 'http://localhost:9200' }); 
-
-    try {
-      const { body } = await client.search({
-        index: 'astro', 
-        size: 1000, 
-        body: {
-          query: {
-            match_all: {}
-          }
-        }
-      });
-  
-      const hits = body.hits.hits.map(hit => hit._source);
-      client.close();
-      res.json(hits);
-   
-    } catch (error) {
-      console.error('Failed to retrieve documents:', error);
-      res.status(500).json({ error: 'Failed to retrieve documents' });
-    }
-  });
-
-
-
 
 app.get('/data-save-mongodb', async (req, res) => {
   const { Client } = require('@elastic/elasticsearch');
@@ -122,7 +95,7 @@ app.get('/data-save-mongodb', async (req, res) => {
   try {
       const { body } = await client.search({
         index: 'astro',
-        size: 1000, 
+        size: 9000, 
         body: {
           query: {
             match_all: {}
@@ -139,7 +112,16 @@ app.get('/data-save-mongodb', async (req, res) => {
     const currentTime = new Date().toISOString().replace('T', ' ').replace('Z', ' UTC');
     const trimmedTime = currentTime.split('.')[0] + " UTC";
     const lastDayEvents = await collection
-      .find({ UTC: { $lte: trimmedTime } })
+    .find(
+      {
+        UTC: { $lte: trimmedTime },
+        EventSource: { $exists: true },
+        RA: { $exists: true },
+        Dec: { $exists: true },
+        EventType: { $exists: true },
+        Urgent: { $exists: true },
+        Title: { $exists: true }
+      })
       .toArray();
     const lastWeek = new Date();
     lastWeek.setDate(lastWeek.getDate() - 7);
@@ -169,10 +151,15 @@ app.get('/data-last-day', async (req, res) => {
     const db = clientMongo.db(dbName);
     const collection = db.collection(collectionName);
     const currentDate = new Date();
-    const startTime = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - 1);
-    const endTime = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-    const startISO = startTime.toISOString().replace('T', ' ').replace('Z', ' UTC');
-    const endISO = endTime.toISOString().replace('T', ' ').replace('Z', ' UTC');
+    const startTime2 = new Date(currentDate.getTime() - 24 * 60 * 60 * 1000); // Subtract 24 hours in milliseconds
+    const startTime = new Date(startTime2.getFullYear(), startTime2.getMonth(), startTime2.getDate(), startTime2.getHours()+3, startTime2.getMinutes(), startTime2.getSeconds());
+
+const endTime = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), currentDate.getHours()+3, currentDate.getMinutes(), currentDate.getSeconds());
+const startISO = startTime.toISOString().split('.')[0].replace('T', ' ').replace('Z', ' UTC');
+const endISO = endTime.toISOString().split('.')[0].replace('T', ' ').replace('Z', ' UTC');
+
+console.log("startISO ",startISO);
+    console.log("endISO ",endISO);
 
     const eventsLastDay = await collection
       .find({ UTC: { $gte: startISO, $lt: endISO } })
